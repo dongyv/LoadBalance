@@ -4,15 +4,23 @@ import javax.servlet.http.HttpServletRequest;
 
 public class HandlerFactory {
 
-    private RequestHandler requestHandler;
-    private HttpServletRequest request;
+    private static HandlerFactory handlerFactory;
 
-    public HandlerFactory(RequestHandler requestHandler, HttpServletRequest request){
-        this.requestHandler = requestHandler;
-        this.request = request;
-    }
-    public IHandlerRequest productRequest(){
-        return new HandlerRequest(requestHandler,request);
+    public HandlerFactory(){}
+
+    public static HandlerFactory createInstance(){
+         if(handlerFactory == null){
+             synchronized (HandlerFactory.class) {
+                 if(handlerFactory == null){
+                     handlerFactory = new HandlerFactory();
+                     }
+                 }
+         }
+         return handlerFactory;
+     }
+
+    public IHandlerRequest productRequest(HttpServletRequest request,RequestHandler requestHandler){
+        return new HandlerRequest(request,requestHandler);
     }
 
 }

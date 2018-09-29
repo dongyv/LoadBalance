@@ -10,7 +10,7 @@ public class HandlerRequest implements IHandlerRequest{
     private RequestHandler requestHandler;
     private HttpServletRequest request;
 
-    public HandlerRequest(RequestHandler requestHandler, HttpServletRequest request){
+    public HandlerRequest(HttpServletRequest request,RequestHandler requestHandler){
         this.requestHandler = requestHandler;
         this.request = request;
     }

@@ -17,7 +17,7 @@ public class UserHandler implements RequestHandler {
 
     @Override
     public String handleRequest(HttpServletRequest request) {
-        if(request.getRequestURI().contains(ModuleConfig.user)){
+        if(request.getRequestURL().toString().contains(ModuleConfig.user)){
             return HttpConfig.getUrl(ip,request);
         }else{
             if(next==null){

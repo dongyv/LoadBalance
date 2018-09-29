@@ -17,7 +17,7 @@ public class MemberHandler implements RequestHandler {
 
     @Override
     public String handleRequest(HttpServletRequest request) {
-        if(request.getRequestURI().contains(ModuleConfig.member)){
+        if(request.getRequestURL().toString().contains(ModuleConfig.member)){
             return HttpConfig.getUrl(ip,request);
         }else{
             if(next==null){
