@@ -24,9 +24,9 @@ public class HelloWorldController {
         //获取转发的ip地址
         String ip = loan.getServer();
         String url="";
-        if(request.getMethod().equals(HttpConfig.getMethod)){
+        if(request.getMethod().toUpperCase().equals(HttpConfig.getMethod.toUpperCase())){
             url = HttpConfig.getUrl(ip,request);
-        }else if(request.getMethod().equals(HttpConfig.postMethod)){
+        }else if(request.getMethod().toUpperCase().equals(HttpConfig.postMethod.toUpperCase())){
             //使用工厂模式生产每个模块的url
             HandlerFactory memberFactory = new HandlerFactory(new MemberHandler(ip),request);
             HandlerFactory userFactory = new HandlerFactory(new UserHandler(ip),request);
@@ -35,7 +35,7 @@ public class HelloWorldController {
             //使用责任链模式，将每个模块进行对应转发
             url = RequestHandlerAll.getRequestHandler(ip).handleRequest(request);
         }
-        HttpUtil.getRedircet(response,url);
+//        HttpUtil.getRedircet(response,url);
     }
 
 }
