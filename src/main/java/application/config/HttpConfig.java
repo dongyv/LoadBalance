@@ -1,5 +1,7 @@
 package application.config;
 
+import org.springframework.util.StringUtils;
+
 import javax.servlet.http.HttpServletRequest;
 
 public class HttpConfig {
@@ -12,6 +14,10 @@ public class HttpConfig {
         //获取资源地址
         String requestURI = request.getRequestURI();
         String param = request.getQueryString();
-        return ip + requestURI + "?" + param;
+        if(StringUtils.isEmpty(param)){
+            return ip + requestURI;
+        }else{
+            return ip + requestURI + "?" + param;
+        }
     }
 }
