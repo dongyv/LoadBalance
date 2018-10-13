@@ -2,6 +2,7 @@ package application.interceptor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -29,15 +30,12 @@ public class InterceptorConfig  implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
 
         log.info("---------------------开始进入请求地址拦截----------------------------");
-        HttpSession session = httpServletRequest.getSession();
-        if(!StringUtils.isEmpty(session.getAttribute("userName"))){
-            return true;
-        }
-        else{
-            PrintWriter printWriter = httpServletResponse.getWriter();
-            printWriter.write("{code:0,message:\"session is invalid,please login again!\"}");
-            return false;
-        }
+        String uri = httpServletRequest.getRequestURI();
+
+        String token = httpServletRequest.getHeader(HttpHeaders.AUTHORIZATION);
+
+
+        return true;
 
     }
 
