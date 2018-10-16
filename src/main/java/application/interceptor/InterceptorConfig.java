@@ -1,5 +1,6 @@
 package application.interceptor;
 
+import application.modle.interceptor.InterceptorHandler;
 import application.modle.interceptor.InterceptorProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,13 +33,13 @@ public class InterceptorConfig  implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object handler) throws Exception {
 
         log.info("---------------------开始进入请求地址拦截----------------------------");
-        String uri = httpServletRequest.getRequestURI();
 
-        String token = httpServletRequest.getHeader(HttpHeaders.AUTHORIZATION);
-        if(InterceptorProvider.getInterceptorHandlers().hasInterceptorHandler(httpServletRequest,handler)){
+        InterceptorHandler interceptor = InterceptorProvider.getInterceptorHandlers();
+        if(interceptor.hasInterceptorHandler(httpServletRequest,handler)){
             log.info("允许通过");
             return true;
         }
+        String token = httpServletRequest.getHeader(HttpHeaders.AUTHORIZATION);
 
         return false;
 

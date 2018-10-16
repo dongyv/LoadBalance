@@ -1,4 +1,4 @@
-package application.modle.interceptor.annocation;
+package application.modle.interceptor.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

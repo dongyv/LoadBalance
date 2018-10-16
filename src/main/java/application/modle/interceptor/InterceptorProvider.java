@@ -30,8 +30,8 @@ public class InterceptorProvider {
     }
 
     public static InterceptorHandler getInterceptorHandlers(){
-        InterceptorHandler power = new PowerInterceptor();
-        InterceptorHandler role = new RoleInterceptor();
+        InterceptorHandler power = new AnnotationInterceptor();
+        InterceptorHandler role = new SignInterceptor();
         power.setNextInterceptor(role);
         return power;
     }
