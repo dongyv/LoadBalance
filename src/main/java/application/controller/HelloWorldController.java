@@ -3,8 +3,7 @@ package application.controller;
 import application.config.HttpConfig;
 import application.modle.request.HandlerFactory;
 import application.modle.request.MemberHandler;
-import application.resource.LoanBalance;
-import application.resource.Random;
+import application.resource.LoanBalanceHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,10 +19,9 @@ public class HelloWorldController {
     @RequestMapping("/*/load")
     @ResponseBody
     public void load(HttpServletRequest request, HttpServletResponse response){
-        LoanBalance loan = new Random();
         //获取转发的ip地址
-        String ip = loan.getServer();
-        String url="";
+        String ip = LoanBalanceHandler.getRandomIp();
+        String url;
         if(request.getMethod().toUpperCase().equals(HttpConfig.getMethod.toUpperCase())){
             url = HttpConfig.getUrl(ip,request);
         }else if(request.getMethod().toUpperCase().equals(HttpConfig.postMethod.toUpperCase())){
@@ -35,8 +33,6 @@ public class HelloWorldController {
             String memberUrl = handlerFactory.productRequest(request,new MemberHandler(ip)).getUrl();
             System.out.println(memberUrl);
             //使用责任链模式，将每个模块进行对应转发
-            url = RequestHandlerAll.getRequestHandler(ip).handleRequest(request);
-            System.out.println(url);
         }
 //        HttpUtil.getRedircet(response,url);
     }
