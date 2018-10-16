@@ -16,7 +16,6 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.HashMap;
@@ -38,8 +37,8 @@ public class SignInterceptor implements InterceptorHandler{
         } else {
             param = new HashMap();
         }
-        if (!CheckSignUtil.check(param, sign)) {
-            throw new ApiException(HttpServletResponse.SC_BAD_REQUEST, ConstantUtil.ZUUL_EXCEPTION_RESPONSE_CHECK_SIGN_FAIL_ERROR);
+        if (CheckSignUtil.check(param, sign)) {
+            return true;
         }
         if(handlerNext != null){
             return handlerNext.hasInterceptorHandler(request,handler);

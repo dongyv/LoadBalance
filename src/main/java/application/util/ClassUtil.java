@@ -6,6 +6,7 @@ import application.modle.resource.LoanBalance;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +42,8 @@ public class ClassUtil {
         String path = pk.replace('.', '/');
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         URL url = classloader.getResource(path);
-        return getClasses(new File(url.getFile()), pk);
+        String utfUrl = URLDecoder.decode(url.getPath(), "utf-8");
+        return getClasses(new File(utfUrl), pk);
     }
 
     /**

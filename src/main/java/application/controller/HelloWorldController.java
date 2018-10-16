@@ -16,7 +16,7 @@ public class HelloWorldController {
     /**
      * 负载均衡
      */
-    @RequestMapping("/*/load")
+    @RequestMapping("/load")
     @ResponseBody
     public void load(HttpServletRequest request, HttpServletResponse response){
         //获取转发的ip地址

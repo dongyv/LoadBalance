@@ -67,4 +67,8 @@ public class CheckSignUtil {
         }
         return str;
     }
+
+    public static void main(String[] args) {
+        System.out.println(Md5.md5Encode("upmall").toUpperCase());
+    }
 }
