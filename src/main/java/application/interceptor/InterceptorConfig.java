@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,12 +23,12 @@ public class InterceptorConfig  implements HandlerInterceptor {
      * 进入controller层之前拦截请求
      * @param httpServletRequest
      * @param httpServletResponse
-     * @param o
+     * @param handler
      * @return
      * @throws Exception
      */
     @Override
-    public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
+    public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object handler) throws Exception {
 
         log.info("---------------------开始进入请求地址拦截----------------------------");
         String uri = httpServletRequest.getRequestURI();
