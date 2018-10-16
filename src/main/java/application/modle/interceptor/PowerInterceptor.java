@@ -17,10 +17,11 @@ public class PowerInterceptor implements InterceptorHandler{
 
     @Override
     public boolean hasInterceptorHandler(HttpServletRequest request, Object handler) {
-
-        if (isHaveAccess(handler)) {
-            log.info("<== preHandle - 不需要认证注解不走认证.  token={}");
-            return true;
+        if(handler instanceof HandlerMethod){
+            if (isHaveAccess(handler)) {
+                log.info("<== preHandle - 不需要认证注解不走认证.  token={}");
+                return true;
+            }
         }
         if(handlerNext != null){
             return handlerNext.hasInterceptorHandler(request,handler);

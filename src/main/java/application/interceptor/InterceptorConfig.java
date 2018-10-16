@@ -1,5 +1,6 @@
 package application.interceptor;
 
+import application.modle.interceptor.InterceptorProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
@@ -34,9 +35,12 @@ public class InterceptorConfig  implements HandlerInterceptor {
         String uri = httpServletRequest.getRequestURI();
 
         String token = httpServletRequest.getHeader(HttpHeaders.AUTHORIZATION);
+        if(InterceptorProvider.getInterceptorHandlers().hasInterceptorHandler(httpServletRequest,handler)){
+            log.info("允许通过");
+            return true;
+        }
 
-
-        return true;
+        return false;
 
     }
 
