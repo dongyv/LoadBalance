@@ -1,7 +1,7 @@
 package application.util;
 
 
-import application.resource.LoanBalance;
+import application.modle.resource.LoanBalance;
 
 import java.io.File;
 import java.io.IOException;
