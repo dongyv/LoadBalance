@@ -2,10 +2,12 @@ package application.modle.interceptor;
 
 import application.ApiException.ApiException;
 import application.ApiException.MediaTypeNotSupportedException;
-import application.ApiException.RequestMethodNotSupportedException;
 import application.config.ConstantUtil;
 import application.config.ModuleConfig;
+import application.util.CheckSignUtil;
 import com.alibaba.fastjson.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.util.StreamUtils;
@@ -14,6 +16,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.HashMap;
@@ -21,9 +24,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class SignInterceptor implements InterceptorHandler{
-
     private InterceptorHandler handlerNext;
-
 
     @Override
     public boolean hasInterceptorHandler(HttpServletRequest request, Object handler) {
@@ -35,7 +36,10 @@ public class SignInterceptor implements InterceptorHandler{
         } else if (HttpMethod.GET.matches(method)) {
             param = this.getGetParams(request);
         } else {
-            throw new RequestMethodNotSupportedException(method);
+            param = new HashMap();
+        }
+        if (!CheckSignUtil.check(param, sign)) {
+            throw new ApiException(HttpServletResponse.SC_BAD_REQUEST, ConstantUtil.ZUUL_EXCEPTION_RESPONSE_CHECK_SIGN_FAIL_ERROR);
         }
         if(handlerNext != null){
             return handlerNext.hasInterceptorHandler(request,handler);

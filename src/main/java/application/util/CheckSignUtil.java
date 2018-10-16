@@ -19,7 +19,7 @@ import java.util.TreeMap;
 @Service
 public class CheckSignUtil {
 
-    public boolean check(Map<String, Object> params, String sign) {
+    public static boolean check(Map<String, Object> params, String sign) {
         if (StringUtils.isEmpty(sign)) {
             throw new RequestParamMissException(null, new String[]{ModuleConfig.ParamEnum.SIGN.getName()});
         }
