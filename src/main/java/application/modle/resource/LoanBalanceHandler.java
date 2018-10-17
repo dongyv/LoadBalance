@@ -17,11 +17,7 @@ public class LoanBalanceHandler {
 
     private static Map<Integer,Class> map;
 
-    public LoanBalanceHandler(LoanBalance balance){
-        this.loanBalance = balance;
-    }
-
-    public static String getRandomIp(){
+    static {
         try{
             List<Class<?>> classes = ClassUtil.getAllAssignedClass(LoanBalance.class);
             if(classes != null && classes.size() > 0){
@@ -31,6 +27,13 @@ public class LoanBalanceHandler {
                 }
             }
         }catch (Exception e){log.error("获取ip地址错误:"+e);}
+    }
+
+    public LoanBalanceHandler(LoanBalance balance){
+        this.loanBalance = balance;
+    }
+
+    public static String getRandomIp(){
         java.util.Random random = new java.util.Random();
         int time = random.nextInt(map.keySet().size());
         String ip = "";
