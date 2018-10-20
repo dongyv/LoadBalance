@@ -10,14 +10,16 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 网络请求类
+ */
 public class ClientUtil {
     public static CloseableHttpClient httpClient = HttpClientBuilder.create().build();
 
@@ -79,4 +81,48 @@ public class ClientUtil {
         }
         return sb.toString();
     }
+
+    /**
+     * 从网络Url中读取text文件
+     * @param urlStr
+     * @throws IOException
+     */
+    public static String  downLoadFromUrl(String urlStr) throws IOException{
+        URL url = new URL(urlStr);
+        HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+        //设置超时间为3秒
+        conn.setConnectTimeout(3*1000);
+        //防止屏蔽程序抓取而返回403错误
+        conn.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
+
+        //得到输入流
+        InputStream inputStream = conn.getInputStream();
+        //获取自己数组
+        String s = readInputStream(inputStream);
+
+        if(inputStream!=null){
+            inputStream.close();
+        }
+
+        return s;
+    }
+
+    /**
+     * 从输入流中获取字节数组
+     * @param inputStream
+     * @return
+     * @throws IOException
+     */
+    public static String readInputStream(InputStream inputStream) throws IOException {
+        byte[] buffer = new byte[1024];
+        int len;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        while((len = inputStream.read(buffer)) != -1) {
+            bos.write(buffer, 0, len);
+        }
+        String b =bos.toString();
+        bos.close();
+        return b;
+    }
+
 }
