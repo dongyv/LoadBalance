@@ -2,18 +2,34 @@ package application.util;
 
 import application.rpc.HelloService;
 import com.alibaba.fastjson.JSONObject;
+import org.apache.http.Consts;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.ContentBody;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 import sun.misc.ProxyGenerator;
 
 import java.io.*;
 import java.lang.reflect.Method;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.*;
 
 public class FileUtil {
 
+    private static final Logger logger = LoggerFactory.getLogger(FileUtil.class);
 
+    private final static String feedbackUrl = "feedback.json";
     /**
      * 以行为单位读取文件，常用于读面向行的格式化文件
      */
@@ -198,8 +214,6 @@ public class FileUtil {
         generateClassFile(HelloService.class,"hellos");
     }
 
-    private final static String feedbackUrl = "";
-
     /**
      *
      * @param param
@@ -261,5 +275,69 @@ public class FileUtil {
         }
         sb.append(object);
         return sb.toString();
+    }
+
+    public static Map<String,Object> uploadFileByHTTP(File postFile, String postUrl, Map<String,String> postParam) {
+
+        Map<String, Object> resultMap = new HashMap<>();
+        HttpClient httpClient = HttpClients.createDefault();
+        try {
+            HttpPost httpPost = new HttpPost(postUrl);
+            ContentBody cbFile = new FileBody(postFile);
+            MultipartEntityBuilder multipartEntity = MultipartEntityBuilder.create();
+            //相当于<input type="file" name="media"/>
+            multipartEntity.addPart(postFile.getName(), cbFile);
+            Set<String> keySet = postParam.keySet();
+            for (String key : keySet) {
+                multipartEntity.addPart(key, new StringBody(postParam.get(key), ContentType.create("text/plain", Consts.UTF_8)));
+            }
+            HttpEntity reqEntity = multipartEntity.build();
+            httpPost.setEntity(reqEntity);
+            logger.info("发起请求的页面地址 " + httpPost.getRequestLine());
+            //发起请求   并返回请求的响应
+            HttpResponse response = httpClient.execute(httpPost);
+            try {
+                logger.info("----------------------------------------");
+                //打印响应状态
+                //log.info(response.getStatusLine());
+                resultMap.put("statusCode", response.getStatusLine().getStatusCode());
+                //获取响应对象
+                HttpEntity resEntity = response.getEntity();
+                if (resEntity != null) {
+                    //打印响应长度
+                    logger.info("Response content length: " + resEntity.getContentLength());
+                    //打印响应内容
+                    resultMap.put("data", EntityUtils.toString(resEntity, Charset.forName("UTF-8")));
+                }
+                //销毁
+                EntityUtils.consume(resEntity);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } catch (ClientProtocolException e1) {
+            e1.printStackTrace();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        logger.info("uploadFileByHTTP result:" + resultMap);
+        return resultMap;
+    }
+
+    public static void flushFile(String url){
+        FileWriter fw = null;
+        File file = null;
+        try {
+            file = new File(url);
+            fw = new FileWriter(file);
+            fw.write("");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                fw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
