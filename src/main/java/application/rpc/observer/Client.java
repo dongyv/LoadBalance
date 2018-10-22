@@ -1,5 +1,6 @@
-package application.modle.observer;
+package application.rpc.observer;
 
 public interface Client {
+
     void receiveNotify();
 }

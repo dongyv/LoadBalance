@@ -1,4 +1,12 @@
-package application.modle.observer;
+package application.rpc.observer;
 
-public class UserClient {
+/**
+ * @author xiachenhang
+ */
+public class UserClient implements Client {
+
+    @Override
+    public void receiveNotify() {
+
+    }
 }
