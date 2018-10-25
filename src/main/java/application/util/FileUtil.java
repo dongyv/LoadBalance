@@ -29,7 +29,7 @@ public class FileUtil {
 
     private static final Logger logger = LoggerFactory.getLogger(FileUtil.class);
 
-    private final static String feedbackUrl = "feedback.json";
+    public final static String feedbackUrl = "feedback.json";
     /**
      * 以行为单位读取文件，常用于读面向行的格式化文件
      */
@@ -214,68 +214,7 @@ public class FileUtil {
         generateClassFile(HelloService.class,"hellos");
     }
 
-    /**
-     *
-     * @param param
-     * @param flush 重新进行写入
-     */
-    public static void updateFile(Map<String,Object> param,boolean flush){
-        FileReader fr = null;
-        FileWriter fileWritter = null;
-        try{
-            File file = new File(feedbackUrl);
-            if(!file.exists()){
-                file.createNewFile();
-            }
-            fr =  new FileReader (feedbackUrl);
-            BufferedReader br = new BufferedReader (fr);
-            String data="",s ;
-            boolean isFirst = false;
-            if(StringUtils.isEmpty(s=br.readLine())){
-                isFirst = true;
-            }
-            if(s!= null && !flush){
-                StringBuffer sb = new StringBuffer("[");
-                sb.append(s);
-                sb.append("]");
-                data = sb.toString() ;
-                System.out.println("重构成功");
-            }
-            fileWritter = new FileWriter(file.getName(),flush);
-            if(param!=null && param.size()>0 && flush){
-                data = getJsonData(param,isFirst);
-                System.out.println("修改成功");
-            }
-            fileWritter.write(data);
 
-        }catch(IOException e){
-            e.printStackTrace();
-        }finally {
-            try {
-                fileWritter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                fr.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    private static String getJsonData(Map<String,Object> params,boolean isFirst){
-        StringBuffer sb = new StringBuffer();
-        if(!isFirst){
-            sb.append(",");
-        }
-        JSONObject object = new JSONObject();
-        for(String key:params.keySet()){
-            object.put(key,params.get(key));
-        }
-        sb.append(object);
-        return sb.toString();
-    }
 
     public static Map<String,Object> uploadFileByHTTP(File postFile, String postUrl, Map<String,String> postParam) {
 
