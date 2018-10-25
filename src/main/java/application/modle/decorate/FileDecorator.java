@@ -10,10 +10,14 @@ public class FileDecorator extends DecoratorProvide{
 
     private static String feedbackUrl = FileUtil.feedbackUrl;
 
-    private boolean flush;
+    private boolean flush = false;
+
+    FileDecorator(DealData dealData) {
+        super(dealData);
+    }
 
     FileDecorator(DealData dealData,boolean flush) {
-        super(dealData);
+        this(dealData);
         this.flush = flush;
     }
 
