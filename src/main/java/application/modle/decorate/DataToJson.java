@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import java.util.Map;
 
 /**
- * 讲map转换为json格式
+ * 被装饰者将map转换为json格式
  * @author xiachenhang
  */
 public class DataToJson implements DealData{

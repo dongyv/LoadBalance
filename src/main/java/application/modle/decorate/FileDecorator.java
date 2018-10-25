@@ -1,11 +1,13 @@
 package application.modle.decorate;
 
 import application.util.FileUtil;
-import org.springframework.util.StringUtils;
 
 import java.io.*;
 import java.util.Map;
 
+/**
+ * 装饰者将生成的数据写入文件
+ */
 public class FileDecorator extends DecoratorProvide{
 
     private static String feedbackUrl = FileUtil.feedbackUrl;
