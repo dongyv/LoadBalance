@@ -21,6 +21,7 @@ import org.springframework.util.StringUtils;
 import sun.misc.ProxyGenerator;
 
 import java.io.*;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.nio.charset.Charset;
 import java.util.*;
@@ -210,12 +211,63 @@ public class FileUtil {
         return null;
     }
 
+    /**
+     * 将其中一个Bean的值复制到另一个Bean中
+     * @param target
+     * @param template
+     * @param <T>
+     * @param <K>
+     * @return
+     */
+    public static <T,K> T getObjectForDate(T target ,K template){
+        Map<String,Object> map = new HashMap<>();
+        Field[] targets = target.getClass().getDeclaredFields();
+        for(int i =0 ;i<targets.length;i++){
+            String param = targets[i].getName();
+            map.put(param,captureName(param));
+        }
+        Field[] templates = template.getClass().getDeclaredFields();
+        for(int i =0;i<templates.length;i++){
+            String param = templates[i].getName();
+            //存在模板的类中
+            if(map.get(param) != null){
+                try{
+                    getSetMethod(target,param,getGetMethod(template,param));
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
+        return target;
+    }
+
+    public static <T> T getSetMethod(T target , String name,Object value)throws Exception{
+        Method[] m = target.getClass().getMethods();
+        for(int i = 0;i < m.length;i++){
+            if(("set"+name).toLowerCase().equals(m[i].getName().toLowerCase())){
+                return (T)m[i].invoke(target,value);
+            }
+        }
+        return null;
+    }
+
+    public static String captureName(String name) {
+        name = name.substring(0, 1).toUpperCase() + name.substring(1);
+        return  name;
+    }
+
+
     public static void main(String[] args) {
         generateClassFile(HelloService.class,"hellos");
     }
 
-
-
+    /**
+     * 将文件提交到网络
+     * @param postFile
+     * @param postUrl
+     * @param postParam
+     * @return
+     */
     public static Map<String,Object> uploadFileByHTTP(File postFile, String postUrl, Map<String,String> postParam) {
 
         Map<String, Object> resultMap = new HashMap<>();
@@ -262,6 +314,10 @@ public class FileUtil {
         return resultMap;
     }
 
+    /**
+     * 清空文件中的数据
+     * @param url
+     */
     public static void flushFile(String url){
         FileWriter fw = null;
         File file = null;
