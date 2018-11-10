@@ -36,7 +36,7 @@ public class HashSort {
         }
     }
     public static void main(String[] args) {
-        int[] a={49,38,65,97,76,13,27,49,78,34,12,64};
+        int[] a={5, 2, 8, 9, 1, 3,4};
         shellSort(a);
         System.out.println(Arrays.toString(a));
     }
