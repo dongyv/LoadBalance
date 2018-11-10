@@ -6,7 +6,7 @@ import java.util.Map;
 public class Decorator {
     public static void main(String[] args) {
         Map<String,Object> map  = new HashMap<>();
-        map.put("s",1);
+        map.put("buildSort",1);
         map.put("a",2);
         //被装饰者
         DealData data = new DataToJson(true);
