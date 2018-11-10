@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03b52bb9-c153-4ca6-a5a7-7e6284013b61" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/sort/buildSort/BuildSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/sort/choiceSort/ChoiceSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/sort/fastSort/FastSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/sort/hashSort/HashSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/sort/heapSort/HeapSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/sort/insertSort/InsertSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/sort/mergeSort/MergeSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/modle/decorate/Decorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/modle/decorate/Decorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TestServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/sort/buildSort/BuildSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/sort/buildSort/BuildSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/sort/choiceSort/ChoiceSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/sort/choiceSort/ChoiceSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/sort/fastSort/FastSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/sort/fastSort/FastSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/sort/hashSort/HashSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/sort/hashSort/HashSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/sort/insertSort/InsertSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/sort/insertSort/InsertSort.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -131,8 +126,8 @@
           <file leaf-file-name="FastSort.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/fastSort/FastSort.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="111">
-                  <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+                <state relative-caret-position="157">
+                  <caret line="64" column="5" lean-forward="true" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -140,8 +135,8 @@
           <file leaf-file-name="BuildSort.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/buildSort/BuildSort.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-3">
-                  <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+                <state relative-caret-position="159">
+                  <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
                 </state>
               </provider>
             </entry>
@@ -149,8 +144,8 @@
           <file leaf-file-name="ChoiceSort.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/choiceSort/ChoiceSort.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="319">
-                  <caret line="42" column="5" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="42" selection-end-column="5" />
+                <state relative-caret-position="184">
+                  <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
                 </state>
               </provider>
             </entry>
@@ -158,8 +153,8 @@
           <file leaf-file-name="InsertSort.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/insertSort/InsertSort.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="342">
-                  <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+                <state relative-caret-position="115">
+                  <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
                 </state>
               </provider>
             </entry>
@@ -167,8 +162,8 @@
           <file leaf-file-name="MergeSort.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/mergeSort/MergeSort.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="897">
-                  <caret line="63" selection-start-line="63" selection-end-line="63" />
+                <state>
+                  <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
@@ -176,7 +171,7 @@
           <file leaf-file-name="HeapSort.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/heapSort/HeapSort.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-624">
+                <state relative-caret-position="253">
                   <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
                 </state>
               </provider>
@@ -185,8 +180,8 @@
           <file leaf-file-name="HashSort.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/hashSort/HashSort.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="319">
-                  <caret line="47" column="5" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="47" selection-end-column="5" />
+                <state relative-caret-position="89">
+                  <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
@@ -303,11 +298,11 @@
         <option value="$PROJECT_DIR$/src/main/java/application/load/MyClassLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/TestServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/sort/heapSort/HeapSort.java" />
-        <option value="$PROJECT_DIR$/src/main/java/application/sort/hashSort/HashSort.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/sort/mergeSort/MergeSort.java" />
-        <option value="$PROJECT_DIR$/src/main/java/application/sort/insertSort/InsertSort.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/sort/choiceSort/ChoiceSort.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/sort/buildSort/BuildSort.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/sort/insertSort/InsertSort.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/sort/hashSort/HashSort.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/sort/fastSort/FastSort.java" />
       </list>
     </option>
@@ -560,6 +555,17 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.FastSort">
+    <configuration name="BuildSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="application.sort.buildSort.BuildSort" />
+      <module name="dongyv-loadBalance" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="application.sort.buildSort.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="ChoiceSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="application.sort.choiceSort.ChoiceSort" />
       <module name="dongyv-loadBalance" />
@@ -589,17 +595,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="application.sort.hashSort.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="HeapSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="application.sort.heapSort.HeapSort" />
-      <module name="dongyv-loadBalance" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="application.sort.heapSort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -661,19 +656,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.HeapSort" />
       <item itemvalue="Application.HashSort" />
       <item itemvalue="Application.ChoiceSort" />
       <item itemvalue="Application.InsertSort" />
       <item itemvalue="Application.FastSort" />
+      <item itemvalue="Application.BuildSort" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.FastSort" />
+        <item itemvalue="Application.BuildSort" />
         <item itemvalue="Application.InsertSort" />
         <item itemvalue="Application.ChoiceSort" />
         <item itemvalue="Application.HashSort" />
-        <item itemvalue="Application.HeapSort" />
       </list>
     </recent_temporary>
   </component>
@@ -961,13 +956,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/application/sort/fastSort/FastSort.java</url>
-          <line>65</line>
+          <line>61</line>
           <properties />
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/application/sort/fastSort/FastSort.java</url>
-          <line>48</line>
+          <line>44</line>
           <properties />
           <option name="timeStamp" value="58" />
         </line-breakpoint>
@@ -975,10 +970,10 @@
           <url>file://$PROJECT_DIR$/src/main/java/application/sort/fastSort/FastSort.java</url>
           <line>18</line>
           <properties />
-          <option name="timeStamp" value="59" />
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="60" />
+      <option name="time" value="61" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1325,52 +1320,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/choiceSort/ChoiceSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/insertSort/InsertSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/mergeSort/MergeSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/heapSort/HeapSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-624">
+        <state relative-caret-position="253">
           <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/hashSort/HashSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="47" column="5" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/mergeSort/MergeSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/insertSort/InsertSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/choiceSort/ChoiceSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="42" selection-end-column="5" />
+        <state relative-caret-position="89">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/buildSort/BuildSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        <state relative-caret-position="159">
+          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/sort/fastSort/FastSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        <state relative-caret-position="157">
+          <caret line="64" column="5" lean-forward="true" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
         </state>
       </provider>
     </entry>

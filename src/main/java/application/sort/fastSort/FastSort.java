@@ -14,20 +14,16 @@ public class FastSort {
      * @param high  结束位置
      * @return  中轴所在位置
      */
-    public static int getMiddle(int[] numbers, int low,int high)
-    {
+    public static int getMiddle(int[] numbers, int low,int high){
         //数组的第一个作为中轴
         int temp = numbers[low];
-        while(low < high)
-        {
-            while(low < high && numbers[high] > temp)
-            {
+        while(low < high) {
+            while(low < high && numbers[high] >= temp) {
                 high--;
             }
             //比中轴小的记录移到低端
             numbers[low] = numbers[high];
-            while(low < high && numbers[low] < temp)
-            {
+            while(low < high && numbers[low] <= temp) {
                 low++;
             }
             //比中轴大的记录移到高端
