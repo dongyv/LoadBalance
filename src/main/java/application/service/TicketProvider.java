@@ -7,10 +7,9 @@ package application.service;
  */
 public class TicketProvider implements Runnable{
     int tickets = 100;
-
+    String str = "哈哈";
     @Override
     public void run() {
-        String str = "哈哈";
         while (true) {
             synchronized (str) {
                 if (tickets > 0) {
