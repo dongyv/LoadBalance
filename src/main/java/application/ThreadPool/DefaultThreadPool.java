@@ -18,11 +18,17 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
     private static final int MIN_WORKER_NUMNERS = 1;
     //这是一个工作列表，将会向里面插入工作
     private final LinkedList<Job> jobs = new LinkedList<>();
-    //工作者列表
+    /**
+     * 工作者列表
+     */
     private final List<Worker> workers = Collections.synchronizedList(new ArrayList<>());
-    //工作者的线程数量
+    /**
+     * 工作者的线程数量
+     */
     private int workerNum = DEFAULT_WORKER_NUMBERS;
-    //线程编号生产
+    /**
+     * 线程编号生产
+     */
     private AtomicLong threadNum = new AtomicLong();
 
     public DefaultThreadPool() {
