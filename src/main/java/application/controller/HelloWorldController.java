@@ -1,9 +1,9 @@
 package application.controller;
 
 import application.config.HttpConfig;
-import application.modle.request.HandlerFactory;
-import application.modle.request.MemberHandler;
-import application.modle.resource.LoanBalanceHandler;
+import application.module.request.HandlerFactory;
+import application.module.request.MemberHandler;
+import application.module.resource.LoanBalanceHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

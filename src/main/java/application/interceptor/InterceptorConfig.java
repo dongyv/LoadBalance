@@ -1,7 +1,7 @@
 package application.interceptor;
 
-import application.modle.interceptor.InterceptorHandler;
-import application.modle.interceptor.InterceptorProvider;
+import application.module.interceptor.InterceptorHandler;
+import application.module.interceptor.InterceptorProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
