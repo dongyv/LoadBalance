@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
+ * 此线程有隐患，效率低，如果实现一个抢票线程，通过唤醒的方式话则每次只能有一个线程进行使用。
+ * 将notify修改为notifyAll
  * @author xiachenhang
  */
 public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> {
@@ -59,7 +61,7 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
             //添加一个工作，然后进行通知
             synchronized(jobs){
                 jobs.addLast(job);
-                jobs.notify();
+                jobs.notifyAll();
             }
         }
 
@@ -132,6 +134,7 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
                             return;
                         }
                     }
+                    System.out.println("当前工作线程："+Thread.currentThread().getName()+",则这个工作列表值为:"+jobs.size());
                     //取出一个Job
                     job = jobs.removeFirst();
                 }
