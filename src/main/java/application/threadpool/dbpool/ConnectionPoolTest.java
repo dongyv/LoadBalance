@@ -6,7 +6,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 一个简单数据库连接池的示例
+ * 一个简单数据库连接池的示例:摘自java并发编程艺术.
+ * 此段代码还有隐患（在动态代理中commit方法，修改为具体实现），之后还需了解java并发容器。目前先了解线程池思想。
  * @author xiachenhang
  */
 public class ConnectionPoolTest {
@@ -64,7 +65,7 @@ public class ConnectionPoolTest {
                     if(connection != null){
                         try {
                             connection.createStatement();
-                            connection.commit();
+//                            connection.commit();
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }finally {
@@ -83,4 +84,5 @@ public class ConnectionPoolTest {
             end.countDown();
         }
     }
+
 }
