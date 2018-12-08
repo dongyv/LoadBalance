@@ -12,9 +12,8 @@ import java.lang.reflect.Method;
 public class AspectProxy implements Proxy {
     private static final Logger LOGGER = LoggerFactory.getLogger(AspectProxy.class);
 
+    @Override
     public Object doProxy(ProxyChain proxyChain) throws Throwable {
-
-
         Object result = null;
 
         Class<?> targetClass = proxyChain.getTargetClass();
@@ -26,7 +25,8 @@ public class AspectProxy implements Proxy {
             //拦截方法
             if(intercept(targetClass,targetMethod,params)){
                 before(targetClass, targetMethod, params);
-                result = proxyChain.doProxyChain(); //执行下一个代理
+                //执行下一个代理
+                result = proxyChain.doProxyChain();
                 after(targetClass, targetMethod, params);
             }
         }catch (Exception e){
