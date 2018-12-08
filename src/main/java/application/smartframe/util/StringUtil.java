@@ -4,7 +4,7 @@ package application.smartframe.util;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Created by xueaohui on 2016/6/20.
+ * Created by xiachenhang on 2018/12/8
  */
 public final class StringUtil {
 

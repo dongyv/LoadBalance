@@ -3,7 +3,7 @@ package application.smartframe.util;
 import org.apache.commons.lang3.ArrayUtils;
 
 /**
- * Created by xueaohui on 2016/6/22.
+ * Created by xiachenhang on 2018/12/8
  */
 public final class ArrayUtil {
     /**

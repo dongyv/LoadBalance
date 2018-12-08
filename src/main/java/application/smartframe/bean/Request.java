@@ -4,7 +4,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 /**
- * Created by xueaohui on 2016/6/22.
+ * Created by xiachenhang on 2018/12/8
  */
 public class Request {
     /**

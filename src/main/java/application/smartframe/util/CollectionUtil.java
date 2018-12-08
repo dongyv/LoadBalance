@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Map;
 
 /**
- * Created by xueaohui on 2016/6/20.
+ * Created by xiachenhang on 2018/12/8
  * 集合工具类
  */
 public final class CollectionUtil {
