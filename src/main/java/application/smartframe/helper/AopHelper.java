@@ -23,8 +23,10 @@ public final class AopHelper {
     static {
         try {
             //获取所有继承AspectProxy的类与代理的目标类映射
+            //存的是Aspect —> Controller
             Map<Class<?>, Set<Class<?>>> proxyMap = createProxyMap();
             //获取所有目标类 与 代理此目标 的代理类集合 映射
+            //Controller ->  Aspect.class.newInstance
             Map<Class<?>, List<Proxy>> targetMap = createTargetMap(proxyMap);
             //遍历
             for (Map.Entry<Class<?>, List<Proxy>> targetEntry : targetMap.entrySet()) {

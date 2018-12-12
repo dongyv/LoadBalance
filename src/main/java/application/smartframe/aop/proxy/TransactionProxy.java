@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import java.lang.reflect.Method;
 
 /**
+ * 事务代理
+ * @author xiachenhang
  * Created by xiachenhang on 2018/12/8
  */
 public class TransactionProxy implements Proxy {

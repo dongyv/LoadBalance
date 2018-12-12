@@ -34,7 +34,7 @@ public class DispatcherServlet extends HttpServlet {
         HelpLoader.init();
 
         ServletContext servletContext = servletConfig.getServletContext();
-
+        //将框架注册到Tomcat下得Servlet容器中
         registerServlet(servletContext);
 
         UploadHelper.init(servletContext);
