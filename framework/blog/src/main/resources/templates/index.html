@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+    <script type="text/javascript">
+        window.onload = function(){
+            var b = document.getElementById("commit");
+			b.onclick = function(){
+				alert(1);
+			}
+        }
+    </script>
+</head>
+<body>
+    首页显示<br>
+    <form class="f1" method="post" >
+        账号:<input type="text" class="user"/><br>
+        密码:<input type="password" class="psd"/><br>
+        <input type="button" id="commit" value="提交"/>
+    </form>
+</body>
+</html>
