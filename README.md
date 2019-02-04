@@ -1,8 +1,8 @@
 ### 项目介绍
 ```
-	学习模块
+	学习模块 moudle 以及 spring boot + myBatis + Redis 搭建
 ```
-### 目录结构说明
+### 学习模块目录结构说明
 ```
     ├─application
     │  │
