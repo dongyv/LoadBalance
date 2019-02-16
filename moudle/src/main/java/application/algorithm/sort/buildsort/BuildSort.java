@@ -1,4 +1,4 @@
-package application.sort.buildsort;
+package application.algorithm.sort.buildsort;
 
 import java.util.Arrays;
 

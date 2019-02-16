@@ -1,4 +1,4 @@
-package application.sort.hashsort;
+package application.algorithm.sort.hashsort;
 
 import java.util.Arrays;
 

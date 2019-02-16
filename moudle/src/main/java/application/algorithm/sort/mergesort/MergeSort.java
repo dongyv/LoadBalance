@@ -1,4 +1,6 @@
-package application.sort.mergesort;
+package application.algorithm.sort.mergesort;
+
+import java.util.Arrays;
 
 public class MergeSort {
     /**
@@ -62,4 +64,9 @@ public class MergeSort {
         }
     }
 
+    public static void main(String[] args) {
+        int[] a={49,38,65,97,76,13,27,49,78,34,12,64};
+        sort(a,0,a.length-1);
+        System.out.println(Arrays.toString(a));
+    }
 }

@@ -1,4 +1,4 @@
-package application.sort.insertsort;
+package application.algorithm.sort.insertsort;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package application.sort.fastsort;
+package application.algorithm.sort.fastsort;
 
 import java.util.Arrays;
 
